@@ -3,11 +3,13 @@
 <title>SENTHIL Editor</title>
 <script >
 function designmode(){
-	editor.document.designMode = 'on';
+	editor.document.designMode = 'on';  // we set designmode on
 }
 
 function bold(){
-	editor.document.execCommand('bold', false, null);
+	editor.document.execCommand('bold', false, null);       /*we use execcommand to make the text bold
+								or italic when the button is pressed*/
+	
 }
 
 function italic(){
@@ -37,16 +39,17 @@ function link(){
 function paragraph(){
 	editor.document.execCommand('InsertParagraph',false,null);
 }
-function dold()
+function dold()                                     // funtion to make the text dold
 {
 
 
-var y=window.prompt("please enter text to be DOLDed")
+var y=window.prompt("please enter text to be DOLDed")    // we create a prompt box to get the string to be dolded 
 
-var n = y.length;
-var a = [];
+var n = y.length;                                // we calculate the lenght of the string entered
+var a = [];					// we create a array variable a
 
-for(var i=0;i<n;i++)    
+for(var i=0;i<n;i++)    			/* we take the string character by charecter and very 2nd 
+							letter is made caps*/
 {
 
 
@@ -76,7 +79,8 @@ ifrm.document.close();
 
 
 }
-function ditalic()
+function ditalic()			/* we take the string character by charecter and very 2nd 
+							letter is made italic */
 {
 
 
@@ -100,7 +104,7 @@ a[i]=y[i];
 a.toString();
 for(var z=0;z < n; z++)
 {
-var h= document.getElementById('editor').contentWindow.document.body.innerHTML;
+var h= document.getElementById('editor').contentWindow.document.body.innerHTML;  // since we use a iframe we write the word in the document
 var ifrm = document.getElementById('editor');
 var iframeDoc = window.frames.editor.document;
 ifrm = (ifrm.contentWindow) ? ifrm.contentWindow : (ifrm.contentDocument.document) ? ifrm.contentDocument.document : ifrm.contentDocument;
@@ -118,13 +122,13 @@ ifrm.document.close();
 </script>
 </head>
 
-<body onLoad = "designmode()">
+<body onLoad = "designmode()">     
 
 <h2>SENTHIL Editor</h2>
 
+ 
 
-
-<form id = "rtf">
+<form id = "rtf">                               
 
 <input type = "button" onclick = "bold()" value = "B">
 <input type = "button" onclick = "italic()" value = "I">
